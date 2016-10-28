@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.6.2.js">
+
+
+    </script>
+    <script type="text/javascript">
+        $(function(){
+
+            $("#test1").bind("click",{book:"java继承",id:"999001"},function(event){
+                alert(event.data.book);
+                alert(event.data.id);
+            });
+            $("#test2").click(function(){
+
+                $("#check").trigger("click");
+
+            });
+
+            $("#test3").toggle(//每次点击后依次调用函数
+                    function(event){
+                        alert("点击了一次"+event);
+                    },
+                    function(event){
+                        alert("点击了二次");
+                    },
+                    function(event){
+                        alert("点击了三次");
+                    },
+                    function(event){
+                        alert("点击了四次");
+                    }
+            );
+            $("#test4").
+            css("border","10px solid black").
+            css("background","red").
+            hover(
+                    function(){
+                        alert('移入');
+                    },function(){
+
+                        alert('移出');
+                    }
+
+
+            );
+        });
+
+
+    </script>
+
+</head>
+<body>
+    <input id="test1" type="button" value="单击我" />
+    <br />
+    <input id="test2" type="button" value="切换右边复选框的勾选状态" />
+    <input id="check" type="checkbox"  />
+    <br />
+    <input id="test3" type="button" value="绑定toggle的按钮" />
+
+    <br />
+    <div id="test4">
+        鼠标悬停、移除将触发指定函数
+    </div>
+</body>
+</html>

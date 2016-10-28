@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.11.0.js">
+
+
+    </script>
+
+    <script type="text/javascript" src="js/jquery.cookie.js">
+
+
+    </script>
+    <script type="text/javascript" >
+
+        $(function(){
+            $("#set").click(function(){
+                $.cookie("papaok","yst",{expires:360});
+            });
+
+            $("#get").click(function(){
+                alert($.cookie("papaok"));
+            });
+
+
+            $("#del").click(function(){
+                $.cookie("papaok",{expires:-1});
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+    <button id="set">设置</button>
+    <button id="get">取值</button>
+
+    <button id="del">删除</button>
+</body>
+</html>

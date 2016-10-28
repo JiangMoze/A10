@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.11.0.js">
+
+
+    </script>
+    <script type="text/javascript">
+
+        document.writeln("$.trim('ddd'));的结果是"+$.trim(" ddd ")+"<br/>");
+
+        $.each(["A","B","C"],function(index,value){
+
+            document.write(index+"---"+value);
+
+        })
+        document.write("</br>");
+        document.write($.grep(["CDE","EFGH","IOPWER"],function(val,i){
+
+            return i>0 && val.length>4;
+
+        }));
+        document.write("</br>");
+        document.write($.map(["A","B","C"],function(value,i){
+            return value+i;
+
+
+        }));
+        document.write("</br>");
+
+        var s=["div","div","div2"];
+        document.write(s.length);
+        document.write("</br>");
+        document.write($.unique(s).length);
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
